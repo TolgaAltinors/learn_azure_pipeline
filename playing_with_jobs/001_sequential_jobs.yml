@@ -1,0 +1,19 @@
+# Example of sequential jobs in the pipeline
+# job J2 is dependent on J1
+
+trigger: none
+
+pool:
+  vmImage: 'ubuntu-18.04' 
+
+stages:
+- stage: MyStage
+  jobs:
+  - job: J1
+    steps:
+    - script: echo "J1"
+
+  - job: J2
+  dependsOn: J1
+    steps:
+    - script: echo "J2"

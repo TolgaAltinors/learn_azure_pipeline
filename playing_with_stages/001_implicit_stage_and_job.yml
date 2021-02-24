@@ -1,0 +1,9 @@
+# Example of implicit declaration of Stage and Job
+# No need to specify these if there is only 1 stage or 1 job
+trigger: none
+
+pool:
+  vmImage: 'ubuntu-18.04' 
+
+steps:
+- script: echo "Hello World"

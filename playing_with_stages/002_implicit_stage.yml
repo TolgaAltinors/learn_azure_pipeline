@@ -1,0 +1,16 @@
+# Example of implicit declaration of Stage
+# No need to specify a Stage if there is only 1 stage in the pipeline
+
+trigger: none
+
+pool:
+  vmImage: 'ubuntu-18.04' 
+
+jobs:
+- job: A
+  steps:
+  - script: echo "A"
+
+- job: B
+  steps:
+  - script: echo "B"

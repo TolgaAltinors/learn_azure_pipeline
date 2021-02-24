@@ -23,7 +23,7 @@ stages:
 
         JOB3:
           Version: 3.0
-              AppName: foobar
+          AppName: foobar
     steps:
     - script: |
         echo "$(Version)"

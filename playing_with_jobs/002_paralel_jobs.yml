@@ -17,12 +17,12 @@ stages:
 
   - job: Linux
     pool:
-      vmImage: 'untu-18.04' 
+      vmImage: 'ubuntu-18.04' 
     steps:
     - script: echo "Hello from Linux"
 
-  - job: MacOS
-    pool:
-      vmImage: 'macOS-10.13' 
-    steps:
-    - script: echo "Hello from MacOS"
+#  - job: MacOS
+#    pool:
+#      vmImage: 'macOS-10.13' 
+#    steps:
+#    - script: echo "Hello from MacOS"

@@ -14,6 +14,6 @@ stages:
     - script: echo "J1"
 
   - job: J2
-  dependsOn: J1
+    dependsOn: J1
     steps:
     - script: echo "J2"

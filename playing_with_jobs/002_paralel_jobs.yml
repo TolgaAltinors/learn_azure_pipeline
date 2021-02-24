@@ -1,0 +1,28 @@
+# Example of parallel jobs in the pipeline
+# If you have multiple agents then these should run in parallel
+
+trigger: none
+
+pool:
+  vmImage: 'ubuntu-18.04' 
+
+stages:
+- stage: MyStage
+  jobs:
+  - job: Windows
+    pool:
+      vmImage: 'vs2017-win2016' 
+    steps:
+    - script: echo "Hello from Windows"
+
+  - job: Linux
+    pool:
+      vmImage: 'untu-18.04' 
+    steps:
+    - script: echo "Hello from Linux"
+
+  - job: MacOS
+    pool:
+      vmImage: 'macOS-10.13' 
+    steps:
+    - script: echo "Hello from MacOS"

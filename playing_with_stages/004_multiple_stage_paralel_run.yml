@@ -1,0 +1,41 @@
+# Example of multiple stages run in paralel in the pipeline
+# Stage A and B will run in paralel
+# Stage C will be treated as if it is dependent on Stage B
+
+trigger: none
+
+pool:
+  vmImage: 'ubuntu-18.04' 
+
+stages:
+
+- stage: A
+  jobs:
+  - job: A1
+    steps:
+    - script: echo "A1"
+
+  - job: A2
+    steps:
+    - script: echo "A2"
+
+- stage: B
+  dependsOn: [] # This removes the dependency on Stage A
+  jobs:
+  - job: B1
+    steps:
+    - script: echo "B1"
+
+  - job: B2
+    steps:
+    - script: echo "B2"
+
+- stage: C  # Stage C will run after B as itiis dependent on it
+  jobs:
+  - job: C1
+    steps:
+    - script: echo "C1"
+
+  - job: C2
+    steps:
+    - script: echo "C2"

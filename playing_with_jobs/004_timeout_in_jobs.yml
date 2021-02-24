@@ -1,0 +1,24 @@
+# Example of sequential jobs in the pipeline
+# job J2 is dependent on J1
+
+trigger: none
+
+pool:
+  vmImage: 'ubuntu-18.04' 
+
+stages:
+- stage: MyStage
+  jobs:
+  - job: MyJob
+    timeoutInMinutes: 1
+    steps:
+    - task: InlinePowershell@1
+      inputs:
+        Script: |
+          Write-Output 'Going to sleep'
+
+          Start-Sleep -s 180
+
+          Write-Output 'Waking up'
+
+          

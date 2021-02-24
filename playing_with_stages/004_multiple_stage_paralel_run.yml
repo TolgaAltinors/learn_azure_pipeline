@@ -30,7 +30,7 @@ stages:
     steps:
     - script: echo "B2"
 
-- stage: C  # Stage C will run after B as itiis dependent on it
+- stage: C  # Stage C will run after B as it is dependent on it
   jobs:
   - job: C1
     steps:
